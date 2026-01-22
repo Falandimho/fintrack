@@ -9,12 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/user")
 public class UsuarioController {
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
@@ -22,7 +21,7 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<Void> cadastrarUsuario(@RequestBody UsuarioCadastroInput usuario) {
-        Usuario usuario1 = usuarioService.cadastrarUsuario(usuario);
+        usuarioService.cadastrarUsuario(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
