@@ -1,4 +1,4 @@
-package com.fintrack.fintrack.model;
+package com.fintrack.model;
 
 import jakarta.persistence.*;
 import lombok.*;
