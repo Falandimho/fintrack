@@ -1,4 +1,4 @@
-package com.fintrack.model;
+package com.fintrack.fintrack.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,14 +6,15 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "tbl_despesa")
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Despesas {
+@Entity
+@Table(name = "tbl_receita")
+public class Receita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +26,10 @@ public class Despesas {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
     private BigDecimal valor;
-    private LocalDate dataDespesa;
+    private LocalDate dataReceita;
 }

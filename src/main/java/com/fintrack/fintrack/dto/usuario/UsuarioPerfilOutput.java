@@ -1,6 +1,6 @@
-package com.fintrack.dto.usuario;
+package com.fintrack.fintrack.dto.usuario;
 
-import com.fintrack.model.Usuario;
+import com.fintrack.fintrack.model.Usuario;
 
 public record UsuarioPerfilOutput(
         Long id,

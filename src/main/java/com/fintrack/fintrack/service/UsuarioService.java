@@ -1,10 +1,10 @@
-package com.fintrack.service;
+package com.fintrack.fintrack.service;
 
-import com.fintrack.dto.usuario.UsuarioCadastroInput;
-import com.fintrack.dto.usuario.UsuarioPerfilOutput;
-import com.fintrack.dto.usuario.UsuarioSaldoOutput;
-import com.fintrack.model.Usuario;
-import com.fintrack.repository.UsuarioRepository;
+import com.fintrack.fintrack.dto.usuario.UsuarioCadastroInput;
+import com.fintrack.fintrack.dto.usuario.UsuarioPerfilOutput;
+import com.fintrack.fintrack.dto.usuario.UsuarioSaldoOutput;
+import com.fintrack.fintrack.model.Usuario;
+import com.fintrack.fintrack.repository.UsuarioRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

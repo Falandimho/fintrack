@@ -1,10 +1,9 @@
-package com.fintrack.controller;
+package com.fintrack.fintrack.controller;
 
-import com.fintrack.dto.usuario.UsuarioCadastroInput;
-import com.fintrack.dto.usuario.UsuarioPerfilOutput;
-import com.fintrack.dto.usuario.UsuarioSaldoOutput;
-import com.fintrack.model.Usuario;
-import com.fintrack.service.UsuarioService;
+import com.fintrack.fintrack.dto.usuario.UsuarioCadastroInput;
+import com.fintrack.fintrack.dto.usuario.UsuarioPerfilOutput;
+import com.fintrack.fintrack.dto.usuario.UsuarioSaldoOutput;
+import com.fintrack.fintrack.service.UsuarioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +30,7 @@ public class UsuarioController {
         return usuarioService.getUsuarioPerfil(email);
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/saldo/{email}")
     @ResponseStatus(HttpStatus.OK)
     public UsuarioSaldoOutput buscarUsuarioPorSaldo(@PathVariable("email") String email) {
         return usuarioService.getUsuarioSaldo(email);

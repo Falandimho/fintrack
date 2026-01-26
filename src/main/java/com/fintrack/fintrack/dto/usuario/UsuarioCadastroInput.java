@@ -1,4 +1,4 @@
-package com.fintrack.dto.usuario;
+package com.fintrack.fintrack.dto.usuario;
 
 public record UsuarioCadastroInput(
         String nome,

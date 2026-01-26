@@ -1,6 +1,6 @@
-package com.fintrack.repository;
+package com.fintrack.fintrack.repository;
 
-import com.fintrack.model.Usuario;
+import com.fintrack.fintrack.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
