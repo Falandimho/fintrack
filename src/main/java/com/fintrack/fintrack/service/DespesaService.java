@@ -66,6 +66,10 @@ public class DespesaService {
             throw new RuntimeException("Nenhum despesa encontrada");
         }
 
+        if (categoriaOptional.isEmpty()) {
+            throw new RuntimeException("Nenhum categoria encontrada");
+        }
+
         Despesa despesa = despesaOptional.get();
         BeanUtils.copyProperties(despesaUpdate, despesa);
         despesa.setCategoria(categoriaOptional.get());
