@@ -43,4 +43,6 @@ public class Usuario {
 
         this.saldoAtual = totalReceitas.subtract(totalDespesas);
     }
+
+
 }

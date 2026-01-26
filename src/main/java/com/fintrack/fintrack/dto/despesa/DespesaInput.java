@@ -6,8 +6,8 @@ import java.time.LocalDate;
 public record DespesaInput(
         String titulo,
         String descricao,
-        Long idCategoria,
-        Long idUsuario,
+        Long categoriaId,
+        Long usuarioId,
         BigDecimal valor,
         LocalDate dataDespesa
 ) {

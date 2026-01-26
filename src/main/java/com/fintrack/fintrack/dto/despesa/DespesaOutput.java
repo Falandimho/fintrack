@@ -5,6 +5,7 @@ import com.fintrack.fintrack.model.Despesa;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public record DespesaOutput(
         Long id,
@@ -19,7 +20,7 @@ public record DespesaOutput(
                 despesa.getId(),
                 despesa.getTitulo(),
                 despesa.getDescricao(),
-                String.valueOf(despesa.getCategoria()),
+                String.valueOf(despesa.getCategoria().getNome()),
                 despesa.getValor(),
                 despesa.getDataDespesa()
         );
