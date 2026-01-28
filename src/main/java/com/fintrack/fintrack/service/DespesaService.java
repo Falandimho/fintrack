@@ -50,12 +50,12 @@ public class DespesaService {
             throw new RuntimeException("Esse usuário não existe");
         }
 
-        Optional<List<Despesa>> optionalDespesas = Optional.ofNullable(despesaRepository.findAllByUsuarioId(optionalUsuario.get().getId()));
-        if (optionalDespesas.isEmpty()) {
+        List<Despesa> despesas = despesaRepository.findAllByUsuarioId(optionalUsuario.get().getId());
+        if (despesas.isEmpty()) {
             throw new RuntimeException("Nenhuma despesa encontrada");
         }
 
-        return optionalDespesas.get().stream().map(DespesaOutput::new).toList();
+        return despesas.stream().map(DespesaOutput::new).toList();
     }
 
     public DespesaOutput atualizarDespesa(DespesaUpdate despesaUpdate) {
