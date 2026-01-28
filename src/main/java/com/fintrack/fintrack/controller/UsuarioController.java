@@ -1,6 +1,6 @@
 package com.fintrack.fintrack.controller;
 
-import com.fintrack.fintrack.dto.usuario.UsuarioCadastroInput;
+import com.fintrack.fintrack.dto.usuario.UsuarioInput;
 import com.fintrack.fintrack.dto.usuario.UsuarioPerfilOutput;
 import com.fintrack.fintrack.dto.usuario.UsuarioSaldoOutput;
 import com.fintrack.fintrack.service.UsuarioService;
@@ -19,7 +19,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> cadastrarUsuario(@RequestBody UsuarioCadastroInput usuario) {
+    public ResponseEntity<Void> cadastrarUsuario(@RequestBody UsuarioInput usuario) {
         usuarioService.cadastrarUsuario(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

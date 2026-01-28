@@ -1,6 +1,6 @@
 package com.fintrack.fintrack.service;
 
-import com.fintrack.fintrack.dto.usuario.UsuarioCadastroInput;
+import com.fintrack.fintrack.dto.usuario.UsuarioInput;
 import com.fintrack.fintrack.dto.usuario.UsuarioPerfilOutput;
 import com.fintrack.fintrack.dto.usuario.UsuarioSaldoOutput;
 import com.fintrack.fintrack.model.Usuario;
@@ -21,7 +21,7 @@ public class UsuarioService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public Usuario cadastrarUsuario(UsuarioCadastroInput usuario) {
+    public Usuario cadastrarUsuario(UsuarioInput usuario) {
         if (usuarioRepository.findByEmail(usuario.email()).isPresent()) {
             throw new IllegalStateException("Email ja em uso");
         }
