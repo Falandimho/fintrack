@@ -32,7 +32,7 @@ public class DespesaController {
     @PutMapping
     public ResponseEntity<DespesaOutput> atualizarDespesa(@RequestBody DespesaUpdate despesaUpdate) {
         DespesaOutput despesaOutput = despesaService.atualizarDespesa(despesaUpdate);
-        return ResponseEntity.ok(despesaOutput);
+        return ResponseEntity.ok().body(despesaOutput);
     }
 
     @DeleteMapping("/{id}")

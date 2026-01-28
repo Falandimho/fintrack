@@ -22,7 +22,6 @@ public class DespesaService {
 
     @Autowired
     private DespesaRepository despesaRepository;
-
     @Autowired
     private UsuarioRepository usuarioRepository;
     @Autowired
@@ -63,7 +62,7 @@ public class DespesaService {
         Optional<Categoria> categoriaOptional = categoriaRepository.findById(despesaUpdate.idCategoria());
 
         if (despesaOptional.isEmpty()) {
-            throw new RuntimeException("Nenhum despesa encontrada");
+            throw new RuntimeException("Nenhuma despesa encontrada");
         }
 
         if (categoriaOptional.isEmpty()) {
@@ -77,7 +76,7 @@ public class DespesaService {
         return new DespesaOutput(despesaRepository.save(despesa));
     }
 
-    public void  deletarDespesa(Long idDespesa) {
+    public void deletarDespesa(Long idDespesa) {
         Optional<Despesa> despesaOptional = despesaRepository.findById(idDespesa);
 
         if (despesaOptional.isEmpty()) {
