@@ -47,12 +47,12 @@ public class DespesaService {
         Optional<Usuario> optionalUsuario = usuarioRepository.findByEmail(emailUsuario);
 
         if (optionalUsuario.isEmpty()) {
-            throw new RuntimeException("Esse usuario não existe");
+            throw new RuntimeException("Esse usuário não existe");
         }
 
-        Optional<List<Despesa>> optionalDespesas = despesaRepository.findAllByUsuarioId(optionalUsuario.get().getId());
+        Optional<List<Despesa>> optionalDespesas = Optional.ofNullable(despesaRepository.findAllByUsuarioId(optionalUsuario.get().getId()));
         if (optionalDespesas.isEmpty()) {
-            throw new RuntimeException("Nenhum despesa encontrada");
+            throw new RuntimeException("Nenhuma despesa encontrada");
         }
 
         return optionalDespesas.get().stream().map(DespesaOutput::new).toList();
@@ -67,7 +67,7 @@ public class DespesaService {
         }
 
         if (categoriaOptional.isEmpty()) {
-            throw new RuntimeException("Nenhum categoria encontrada");
+            throw new RuntimeException("Nenhuma categoria encontrada");
         }
 
         Despesa despesa = despesaOptional.get();

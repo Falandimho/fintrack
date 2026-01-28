@@ -31,8 +31,8 @@ public class DespesaController {
 
     @PutMapping
     public ResponseEntity<DespesaOutput> atualizarDespesa(@RequestBody DespesaUpdate despesaUpdate) {
-        despesaService.atualizarDespesa(despesaUpdate);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        DespesaOutput despesaOutput = despesaService.atualizarDespesa(despesaUpdate);
+        return ResponseEntity.ok(despesaOutput);
     }
 
     @DeleteMapping("/{id}")
