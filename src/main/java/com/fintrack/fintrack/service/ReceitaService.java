@@ -66,8 +66,8 @@ public class ReceitaService {
             throw new RuntimeException("Nenhum categoria encontrada");
         }
 
-        Receita receita = new Receita();
-        BeanUtils.copyProperties(receitaUpdate,receita);
+        Receita receita = optionalReceita.get();
+        BeanUtils.copyProperties(receitaUpdate, receita);
         receita.setCategoria(optionalCategoria.get());
 
         return new ReceitaOutput(receitaRepository.save(receita));
