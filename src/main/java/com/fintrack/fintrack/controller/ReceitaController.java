@@ -19,9 +19,8 @@ public class ReceitaController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> cadastrarReceita(@RequestBody ReceitaInput receitaInput){
-        receitaService.cadastroReceita(receitaInput);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<ReceitaOutput> cadastrarReceita(@RequestBody ReceitaInput receitaInput){
+        return ResponseEntity.status(HttpStatus.CREATED).body(receitaService.cadastroReceita(receitaInput));
     }
 
     @GetMapping("/{emailUsuario}")

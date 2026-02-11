@@ -32,4 +32,6 @@ public class Despesa {
 
     private BigDecimal valor;
     private LocalDate dataDespesa;
+
+
 }

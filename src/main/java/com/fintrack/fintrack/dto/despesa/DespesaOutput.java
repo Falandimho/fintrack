@@ -11,16 +11,30 @@ public record DespesaOutput(
         String descricao,
         String categoria,
         BigDecimal valor,
-        LocalDate dataDespesa
+        LocalDate dataDespesa,
+        BigDecimal saldoAtual
 ) {
-    public DespesaOutput(Despesa despesa){
+    public DespesaOutput(Despesa despesa, BigDecimal saldoAtual){
         this(
                 despesa.getId(),
                 despesa.getTitulo(),
                 despesa.getDescricao(),
                 String.valueOf(despesa.getCategoria().getNome()),
                 despesa.getValor(),
-                despesa.getDataDespesa()
+                despesa.getDataDespesa(),
+                saldoAtual
+        );
+    }
+
+    public DespesaOutput(Despesa despesa) {
+        this(
+                despesa.getId(),
+                despesa.getTitulo(),
+                despesa.getDescricao(),
+                String.valueOf(despesa.getCategoria().getNome()),
+                despesa.getValor(),
+                despesa.getDataDespesa(),
+                null
         );
     }
 }

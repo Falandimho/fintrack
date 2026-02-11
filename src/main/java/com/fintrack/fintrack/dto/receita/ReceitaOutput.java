@@ -11,8 +11,21 @@ public record ReceitaOutput(
         String descricao,
         String categoria,
         BigDecimal valor,
-        LocalDate dataReceita
+        LocalDate dataReceita,
+        BigDecimal saldoAtual
 ) {
+    public ReceitaOutput(Receita receita, BigDecimal saldoAtual) {
+        this(
+                receita.getId(),
+                receita.getTitulo(),
+                receita.getDescricao(),
+                String.valueOf(receita.getCategoria().getNome()),
+                receita.getValor(),
+                receita.getDataReceita(),
+                saldoAtual
+        );
+    }
+
     public ReceitaOutput(Receita receita) {
         this(
                 receita.getId(),
@@ -20,7 +33,8 @@ public record ReceitaOutput(
                 receita.getDescricao(),
                 String.valueOf(receita.getCategoria().getNome()),
                 receita.getValor(),
-                receita.getDataReceita()
+                receita.getDataReceita(),
+                null
         );
     }
 }
