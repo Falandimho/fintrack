@@ -13,7 +13,7 @@ public enum CategoriaTipo {
     }
 
     @JsonCreator
-    public static CategoriaTipo fromString(String value) {
+    public static CategoriaTipo fromValue(String value) {
         if (value == null) return null;
         try {
             return CategoriaTipo.valueOf(value.trim().toUpperCase());
