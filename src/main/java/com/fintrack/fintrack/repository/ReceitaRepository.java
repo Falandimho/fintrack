@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
     List<Receita> findAllByUsuarioId(Long id);
+    List<Receita> findAllByUsuarioIdAndDataReceitaBetween(Long id, LocalDate inicio, LocalDate fim);
 
     @Query("""
         SELECT new com.fintrack.fintrack.dto.relatorio.RelatorioCategoria(

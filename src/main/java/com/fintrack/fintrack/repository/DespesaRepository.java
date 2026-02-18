@@ -34,4 +34,6 @@ public interface DespesaRepository extends JpaRepository<Despesa,Long> {
             @Param("dataInicio") LocalDate dataInicio,
             @Param("dataFim") LocalDate dataFim
             );
+
+    List<Despesa> findAllByUsuarioIdAndDataDespesaBetween(Long id, LocalDate inicio, LocalDate fim);
 }

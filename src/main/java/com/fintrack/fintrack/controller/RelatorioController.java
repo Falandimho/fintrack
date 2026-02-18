@@ -1,9 +1,9 @@
 package com.fintrack.fintrack.controller;
 
 import com.fintrack.fintrack.dto.relatorio.RelatorioCategoria;
+import com.fintrack.fintrack.dto.relatorio.RelatorioPeriodo;
 import com.fintrack.fintrack.model.CategoriaTipo;
 import com.fintrack.fintrack.service.RelatorioService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,5 +47,14 @@ public class RelatorioController {
             e.printStackTrace();
             throw e;
         }
+    }
+
+    @GetMapping("/saldo/periodo")
+    public RelatorioPeriodo BuscarSaldoPeriodo(
+            @RequestParam String email,
+            @RequestParam LocalDate dataInicio,
+            @RequestParam LocalDate dataFim
+    ) {
+        return relatorioService.getSaldoPorPeriodo(email, dataInicio, dataFim);
     }
 }
