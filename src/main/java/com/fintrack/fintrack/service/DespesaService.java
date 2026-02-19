@@ -13,6 +13,7 @@ import com.fintrack.fintrack.repository.UsuarioRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -31,6 +32,7 @@ public class DespesaService {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Transactional
     public DespesaOutput cadastroDespesa(DespesaInput despesaInput) {
         Optional<Usuario> optionalUsuario = usuarioRepository.findById(despesaInput.usuarioId());
         Optional<Categoria> optionalCategoria = categoriaRepository.findById(despesaInput.categoriaId());
@@ -66,6 +68,7 @@ public class DespesaService {
         return despesas.stream().map(DespesaOutput::new).toList();
     }
 
+    @Transactional
     public DespesaOutput atualizarDespesa(DespesaUpdate despesaUpdate) {
         Optional<Despesa> despesaOptional = despesaRepository.findById(despesaUpdate.id());
         Optional<Categoria> categoriaOptional = categoriaRepository.findById(despesaUpdate.idCategoria());
