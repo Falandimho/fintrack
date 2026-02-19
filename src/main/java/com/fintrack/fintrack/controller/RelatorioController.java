@@ -50,7 +50,7 @@ public class RelatorioController {
     }
 
     @GetMapping("/saldo/periodo")
-    public RelatorioPeriodo BuscarSaldoPeriodo(
+    public RelatorioPeriodo buscarSaldoPeriodo(
             @RequestParam String email,
             @RequestParam LocalDate dataInicio,
             @RequestParam LocalDate dataFim
