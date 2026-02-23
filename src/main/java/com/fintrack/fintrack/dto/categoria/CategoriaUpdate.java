@@ -4,7 +4,7 @@ import com.fintrack.fintrack.model.CategoriaTipo;
 
 public record CategoriaUpdate(
         Long id,
-        String name,
+        String nome,
         CategoriaTipo tipo
 ) {
 

@@ -97,6 +97,10 @@ public class DespesaService {
             throw new RuntimeException("Nenhum despesa encontrada");
         }
 
+        BigDecimal valor = despesaOptional.get().getValor();
+        Usuario usuario = despesaOptional.get().getUsuario();
+
+        usuarioService.atualizarSaldoUsuario(usuario.getEmail(), valor, CategoriaTipo.RECEITA);
         despesaRepository.deleteById(idDespesa);
     }
 }

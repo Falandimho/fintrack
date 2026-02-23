@@ -87,15 +87,19 @@ public class ReceitaService {
 
         BigDecimal saldoAtual = usuarioService.atualizarSaldoUsuario(usuario.getEmail(), valor, CategoriaTipo.RECEITA);
 
-        return new ReceitaOutput(receitaRepository.save(optionalReceita.get()),saldoAtual);
-}
-
-public void deletarReceita(Long id) {
-    Optional<Receita> optionalReceita = receitaRepository.findById(id);
-    if (optionalReceita.isEmpty()) {
-        throw new RuntimeException("Nenhum receita encontrada");
+        return new ReceitaOutput(receitaRepository.save(receita), saldoAtual);
     }
 
-    receitaRepository.deleteById(id);
-}
+    public void deletarReceita(Long id) {
+        Optional<Receita> optionalReceita = receitaRepository.findById(id);
+        if (optionalReceita.isEmpty()) {
+            throw new RuntimeException("Nenhum receita encontrada");
+        }
+        Usuario usuario = optionalReceita.get().getUsuario();
+
+        BigDecimal valorReceita = optionalReceita.get().getValor();
+        usuarioService.atualizarSaldoUsuario(usuario.getEmail(), valorReceita, CategoriaTipo.DESPESA);
+
+        receitaRepository.deleteById(id);
+    }
 }
