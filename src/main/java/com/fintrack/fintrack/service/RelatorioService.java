@@ -93,7 +93,7 @@ public class RelatorioService {
 
         BigDecimal valorLiquido = valorReceita.subtract(valorDespesa);
 
-        return new RelatorioPeriodo(valorReceita, valorDespesa, valorLiquido, (long) receitas.size(), (long) despesas.size());
+        return new RelatorioPeriodo(valorReceita, valorDespesa, valorLiquido, (long) despesas.size(), (long) receitas.size());
     }
 
 }
