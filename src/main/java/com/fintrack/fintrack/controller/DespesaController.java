@@ -19,9 +19,8 @@ public class DespesaController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> cadastrarDespesa(@RequestBody DespesaInput despesaInput) {
-        despesaService.cadastroDespesa( despesaInput );
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<DespesaOutput> cadastrarDespesa(@RequestBody DespesaInput despesaInput) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(despesaService.cadastroDespesa(despesaInput));
     }
 
     @GetMapping("/{emailUsuario}")
