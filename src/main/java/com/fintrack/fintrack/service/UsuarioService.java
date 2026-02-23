@@ -6,8 +6,6 @@ import com.fintrack.fintrack.dto.usuario.UsuarioSaldoOutput;
 import com.fintrack.fintrack.model.CategoriaTipo;
 
 import com.fintrack.fintrack.model.Usuario;
-import com.fintrack.fintrack.repository.DespesaRepository;
-import com.fintrack.fintrack.repository.ReceitaRepository;
 import com.fintrack.fintrack.repository.UsuarioRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

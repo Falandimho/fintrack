@@ -32,7 +32,7 @@ public class UsuarioController {
 
     @GetMapping("/saldo/{email}")
     @ResponseStatus(HttpStatus.OK)
-    public UsuarioSaldoOutput BuscarSaldoUsuario(@PathVariable("email") String email) {
+    public UsuarioSaldoOutput buscarSaldoUsuario(@PathVariable("email") String email) {
         return usuarioService.getUsuarioSaldo(email);
     }
 
