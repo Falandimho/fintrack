@@ -1,6 +1,6 @@
 # 💰 FinTrack API
 
-Swagger: https://553a8888-bf2b-4ffc-a32d-341b92b1e605-00-hxfhiz2y42v5.picard.replit.dev/
+Swagger: https://fintrack--AnthonyFalador.replit.app
 
 ### API REST para Controle Financeiro Pessoal
 
