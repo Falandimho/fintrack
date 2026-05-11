@@ -1,6 +1,6 @@
 # 💰 FinTrack API
 
-Swagger: https://fintrack--AnthonyFalador.replit.app
+Swagger: https://fintrack--AnthonyFalador.replit.app/swagger-ui/index.html
 
 ### API REST para Controle Financeiro Pessoal
 
